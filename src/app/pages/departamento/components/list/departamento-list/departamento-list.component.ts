@@ -1,14 +1,14 @@
-import {Component, EventEmitter, Input, NgModule, OnInit, Output} from '@angular/core';
-import {Product} from '../../../models/product';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Departamento} from '../../../models/departamento';
+
 
 @Component({
-  selector: 'app-product-list',
-  templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.css']
+  selector: "app-departamento-list",
+  templateUrl: './departamento-list.component.html',
+  styleUrls: ['./list-departamento.component.css']
 })
-
-export class ProductListComponent implements OnInit {
-  @Input() products: Product[];
+export class DepartamentoListComponent implements OnInit {
+  @Input() departamentos: Departamento[];
   @Output() onNew: EventEmitter<boolean> = new EventEmitter();
   @Output() onDelete: EventEmitter<number> = new EventEmitter();
   @Output() onEdit: EventEmitter<number> = new EventEmitter();
@@ -19,7 +19,7 @@ export class ProductListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public newProduct(): void {
+  public newDepartamento(): void {
     this.onNew.emit(true);
   }
 

@@ -7,7 +7,7 @@ import {catchError, retry} from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class ProductsService {
+export class DepartamentosService {
   httpHeaders = {
     headers: new HttpHeaders({
       'Accept': 'application/json',
@@ -15,39 +15,39 @@ export class ProductsService {
       'Authorization': `Bearer ${localStorage.getItem('accessToken')}`
     })
   };
-  endPoint = 'products/';
+  endPoint = 'departamentos/';
 
   constructor(private httpClient: HttpClient) {
 
-    
+
   }
 
-  public getProduct(): Observable<any> {
+  public getDepartamento(): Observable<any> {
     return this.httpClient.get<any>(`${environment.url}${this.endPoint}`, this.httpHeaders)
       .pipe(retry(1),
         catchError(this.httpError));
   }
 
-  public getProductById(id: number): Observable<any> {
+  public getDepartamentoById(id: number): Observable<any> {
     return this.httpClient.get<any>(`${environment.url}${this.endPoint}${id}`, this.httpHeaders)
       .pipe(retry(1),
         catchError(this.httpError));
   }
 
-  public postProduct(params): Observable<any> {
+  public postDepartamento(params): Observable<any> {
 
     return this.httpClient.post(`${environment.url}${this.endPoint}`, params, this.httpHeaders)
       .pipe(retry(1),
         catchError(this.httpError));
   }
 
-  public updateProduct(id: number, params): Observable<any> {
+  public updateDepartamento(id: number, params): Observable<any> {
     return this.httpClient.put(`${environment.url}${this.endPoint}${id}`, params, this.httpHeaders)
       .pipe(retry(1),
         catchError(this.httpError));
   }
 
-  public deleteProduct(id: number): Observable<any> {
+  public deleteDepartamento(id: number): Observable<any> {
 
     return this.httpClient.delete(`${environment.url}${this.endPoint}${id}`, this.httpHeaders)
       .pipe(retry(1),

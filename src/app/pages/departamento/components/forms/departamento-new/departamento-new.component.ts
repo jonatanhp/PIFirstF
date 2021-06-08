@@ -3,19 +3,19 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-  selector: 'app-product-new',
-  templateUrl: './product-new.component.html',
-  styleUrls: ['./product-new.component.css']
+  selector: 'app-departamento-new',
+  templateUrl: './departamento-new.component.html',
+  styleUrls: ['./departamento-new.component.css']
 })
-export class ProductNewComponent implements OnInit {
-  productForm: FormGroup;
+export class DepartamentoNewComponent implements OnInit {
+  departamentoForm: FormGroup;
   @Input() title: string;
   @Output() onNewData: EventEmitter<Object> = new EventEmitter();
 
   constructor(private formBuilder: FormBuilder, public activeModal: NgbActiveModal) {
-    this.productForm = this.formBuilder.group({
-      name: ['', [Validators.required]],
-      detail: ['', [Validators.required]]
+    this.departamentoForm = this.formBuilder.group({
+      nom_dep: ['', [Validators.required]]
+      
     });
   }
 
@@ -24,8 +24,8 @@ export class ProductNewComponent implements OnInit {
   }
 
   public save(): void {
-    if (this.productForm.valid) {
-      this.activeModal.close(this.productForm.value);
+    if (this.departamentoForm.valid) {
+      this.activeModal.close(this.departamentoForm.value);
     }
 
   }

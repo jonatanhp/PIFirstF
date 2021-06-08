@@ -18,6 +18,11 @@ import {ProductNewComponent} from "../../pages/product/components/forms/product-
 import {ProductEditComponent} from "../../pages/product/components/forms/product-edit/product-edit.component";
 import {ProductListComponent} from "../../pages/product/components/list/product-list/product-list.component";
 import {ProductsService} from "../../../providers/products/products.service";
+import {DepartamentoComponent} from "../../pages/departamento/container/departamento/departamento.component";
+import {DepartamentoNewComponent} from "../../pages/departamento/components/forms/departamento-new/departamento-new.component";
+import {DepartamentoEditComponent} from "../../pages/departamento/components/forms/edit-dep/edit-dep.component";
+import {DepartamentoListComponent} from "../../pages/departamento/components/list/departamento-list/departamento-list.component";
+import {DepartamentosService} from "../../../providers/departamentos/departamentos.service";
 
 // import { ToastrModule } from 'ngx-toastr';
 
@@ -41,7 +46,11 @@ import {ProductsService} from "../../../providers/products/products.service";
     ProductNewComponent,
     ProductEditComponent,
     ProductListComponent,
-  ], providers: [ProductsService]
+    DepartamentoComponent,
+    DepartamentoNewComponent,
+    DepartamentoEditComponent,
+    DepartamentoListComponent,
+  ], providers: [ProductsService, DepartamentosService]
 })
 
 export class AdminLayoutModule {
