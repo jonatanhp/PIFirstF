@@ -1,0 +1,36 @@
+<br>
+<br>
+<br><br>
+<br>
+
+<div class="container">
+
+  <button class="btn btn-primary" (click)="newNivel()"> Agregar Nivel</button>
+
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Nivel</th>
+      <th scope="col">Descripcion</th>
+      <th scope="col">Date Created</th>
+      <th scope="col">Date Updated</th>
+      <th scope="col"> Opciones</th>
+    </tr>
+    </thead>
+    <tbody>
+      
+    <tr *ngFor="let n of nivels">
+      <th scope="row">{{n.id}}</th>
+      <td>{{n.nom_nivel}}</td>
+      <td>{{n.desc_nivel}}</td>
+      <td>{{n.created_at}}</td>
+      <td>{{n.updated_at}}</td>
+      <td><button class="btn-danger" (click)="delete(n.id)">Eliminar</button>
+        <button class="btn-primary" (click)="editNivel(n.id)">Editar</button>
+      </td>
+    </tr>
+
+    </tbody>
+  </table>
+</div>

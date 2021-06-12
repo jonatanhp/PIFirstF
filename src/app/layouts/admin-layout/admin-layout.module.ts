@@ -18,6 +18,10 @@ import {ProductNewComponent} from "../../pages/product/components/forms/product-
 import {ProductEditComponent} from "../../pages/product/components/forms/product-edit/product-edit.component";
 import {ProductListComponent} from "../../pages/product/components/list/product-list/product-list.component";
 import {ProductsService} from "../../../providers/products/products.service";
+import {NivelComponent} from "../../pages/nivel/container/nivel/nivel.component";
+import {NivelNewComponent} from "../../pages/nivel/components/forms/nivel-new/nivel-new.component";
+import {NivelListComponent} from "../../pages/nivel/components/list/nivel-list/nivel-list.component";
+import {NivelsService} from "../../../providers/nivels/nivels.service";
 import {DepartamentoComponent} from "../../pages/departamento/container/departamento/departamento.component";
 import {DepartamentoNewComponent} from "../../pages/departamento/components/forms/departamento-new/departamento-new.component";
 import {DepartamentoEditComponent} from "../../pages/departamento/components/forms/edit-dep/edit-dep.component";
@@ -46,11 +50,14 @@ import {DepartamentosService} from "../../../providers/departamentos/departament
     ProductNewComponent,
     ProductEditComponent,
     ProductListComponent,
+    NivelComponent,
+    NivelNewComponent,
+    NivelListComponent,
     DepartamentoComponent,
     DepartamentoNewComponent,
     DepartamentoEditComponent,
     DepartamentoListComponent,
-  ], providers: [ProductsService, DepartamentosService]
+  ], providers: [ProductsService, DepartamentosService, NivelsService]
 })
 
 export class AdminLayoutModule {
