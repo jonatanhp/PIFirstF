@@ -29,7 +29,7 @@ export class  GradoService{
         catchError(this.httpError));
   }
 
-  public getGradoById(id: bigint): Observable<any> {
+  public getGradoById(id: number): Observable<any> {
     return this.httpClient.get<any>(`${environment.url}${this.endPoint}${id}`, this.httpHeaders)
       .pipe(retry(1),
         catchError(this.httpError));
@@ -42,7 +42,7 @@ export class  GradoService{
         catchError(this.httpError));
   }
 
-  public updateGrado(id: bigint, params): Observable<any> {
+  public updateGrado(id: number, params): Observable<any> {
     return this.httpClient.put(`${environment.url}${this.endPoint}${id}`, params, this.httpHeaders)
       .pipe(retry(1),
         catchError(this.httpError));

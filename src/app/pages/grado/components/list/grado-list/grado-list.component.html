@@ -5,13 +5,13 @@
 
 <div class="container">
 
-  <button class="btn btn-primary" (click)="newNivel()"> Agregar Nivel</button>
+  <button class="btn btn-primary" (click)="newGrado()"> Agregar Nivel</button>
 
   <table class="table">
     <thead>
     <tr>
       <th scope="col">Id</th>
-      <th scope="col">Nivel</th>
+      <th scope="col">Grado</th>
       <th scope="col">Descripcion</th>
       <th scope="col">Date Created</th>
       <th scope="col">Date Updated</th>
@@ -20,18 +20,18 @@
     </thead>
     <tbody>
       
-    <tr *ngFor="let n of nivels">
+    <tr *ngFor="let n of grados">
       <th scope="row">{{n.id}}</th>
-      <td>{{n.nom_nivel}}</td>
-      <td>{{n.desc_nivel}}</td>
+      <td>{{n.nom_grado}}</td>
+      <td>{{n.desc_grado}}</td>
       <td>{{n.created_at}}</td>
       <td>{{n.updated_at}}</td>
       <td><button class="btn-danger" (click)="delete(n.id)">Eliminar</button>
-        <button class="btn-primary" (click)="editNivel(n.id)">Editar</button>
-        <button class="btn-success" (click)="searchGradosOfNivel(n.id)">Grados</button>
+        <button class="btn-primary" (click)="editGrado(n.id)">Editar</button>
       </td>
     </tr>
 
     </tbody>
   </table>
 </div>
+

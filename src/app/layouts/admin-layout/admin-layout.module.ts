@@ -23,6 +23,11 @@ import {NivelNewComponent} from "../../pages/nivel/components/forms/nivel-new/ni
 import {NivelEditComponent} from "../../pages/nivel/components/forms/nivel-edit/nivel-edit.component";
 import {NivelListComponent} from "../../pages/nivel/components/list/nivel-list/nivel-list.component";
 import {NivelsService} from "../../../providers/nivels/nivels.service";
+import {GradoComponent} from '../../pages/grado/container/grado/grado.component';
+import {GradoNewComponent} from '../../pages/grado/components/forms/grado-new/grado-new.component';
+import {GradoEditComponent} from '../../pages/grado/components/forms/grado-edit/grado-edit.component';
+import {GradoListComponent} from '../../pages/grado/components/list/grado-list/grado-list.component';
+import {GradoService} from '../../../providers/grado/grado.service';
 import {DepartamentoComponent} from "../../pages/departamento/container/departamento/departamento.component";
 import {DepartamentoNewComponent} from "../../pages/departamento/components/forms/departamento-new/departamento-new.component";
 import {DepartamentoEditComponent} from "../../pages/departamento/components/forms/edit-dep/edit-dep.component";
@@ -55,11 +60,15 @@ import {DepartamentosService} from "../../../providers/departamentos/departament
     NivelNewComponent,
     NivelEditComponent,
     NivelListComponent,
+    GradoComponent,
+    GradoNewComponent,
+    GradoEditComponent,
+    GradoListComponent,
     DepartamentoComponent,
     DepartamentoNewComponent,
     DepartamentoEditComponent,
     DepartamentoListComponent,
-  ], providers: [ProductsService, DepartamentosService, NivelsService]
+  ], providers: [ProductsService, DepartamentosService, NivelsService, GradoService]
 })
 
 export class AdminLayoutModule {

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {NivelsService} from '../../../../../providers/nivels/nivels.service';
 import {Nivel} from '../../model/nivels';
-import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {Grado} from '../../../grado/model/grado';
 import {NivelNewComponent} from '../../components/forms/nivel-new/nivel-new.component';
 import { NivelEditComponent } from '../../components/forms/nivel-edit/nivel-edit.component';
 
@@ -14,6 +15,7 @@ export class NivelComponent implements OnInit {
   error:string;
   nivels:Nivel[];
   nivel:Nivel;
+  grados:Grado[];
 
   constructor(private nivelService:NivelsService, private modalService:NgbModal) { }
 
@@ -68,6 +70,16 @@ export class NivelComponent implements OnInit {
     }, error=>{
       this.error=error;
     })
+  }
+
+  searchGradosOfNivel(id:number):void{
+    this.nivelService.getNivelById(id).subscribe(response=>{
+      this.grados=response.message;
+      console.log("inicio recuperar grados de nivel");
+      console.log(this.grados);
+      console.log("fin recuperar grados de nivel");
+    });
+
   }
 
   public delete(id: number):void{

@@ -8,6 +8,7 @@ import { TablesComponent } from '../../pages/tables/tables.component';
 import {ProductComponent} from "../../pages/product/container/product/product.component";
 import { DepartamentoComponent } from 'src/app/pages/departamento/container/departamento/departamento.component';
 import {NivelComponent} from '../../pages/nivel/container/nivel/nivel.component';
+import { GradoComponent} from '../../pages/grado/container/grado/grado.component';
 
 
 export const AdminLayoutRoutes: Routes = [
@@ -17,8 +18,8 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'icons',          component: IconsComponent },
     { path: 'maps',           component: MapsComponent },
     { path: 'products',       component: ProductComponent },
-    { path: 'departamentos',  component: DepartamentoComponent},
-    {path: 'niveles',         component:NivelComponent},
-    //{path: 'grados',         component:NivelComponent}
+    { path: 'departamentos',  component: DepartamentoComponent },
+    { path: 'niveles',         component:NivelComponent },
+    { path: 'grados',          component:GradoComponent }
     
 ];
