@@ -7,7 +7,7 @@ import {catchError, retry} from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class NivelsService {
+export class  GradoService{
   httpHeaders = {
     headers: new HttpHeaders({
       //'Access-Control-Allow-Origin': 'http://localhost:8000/niveles',
@@ -16,39 +16,39 @@ export class NivelsService {
       'Authorization': `Bearer ${localStorage.getItem('accessToken')}`
     })
   };
-  endPoint = 'niveles/';
+  endPoint = 'grados/';
 
   constructor(private httpClient: HttpClient) {
 
     
   }
 
-  public getNivel(): Observable<any> {
+  public getGrado(): Observable<any> {
     return this.httpClient.get<any>(`${environment.url}${this.endPoint}`, this.httpHeaders)
       .pipe(retry(1),
         catchError(this.httpError));
   }
 
-  public getNivelById(id: number): Observable<any> {
+  public getGradoById(id: bigint): Observable<any> {
     return this.httpClient.get<any>(`${environment.url}${this.endPoint}${id}`, this.httpHeaders)
       .pipe(retry(1),
         catchError(this.httpError));
   }
 
-  public postNivel(params): Observable<any> {
+  public postGrado(params): Observable<any> {
 
     return this.httpClient.post(`${environment.url}${this.endPoint}`, params, this.httpHeaders)
       .pipe(retry(1),
         catchError(this.httpError));
   }
 
-  public updateNivel(id: number, params): Observable<any> {
+  public updateGrado(id: bigint, params): Observable<any> {
     return this.httpClient.put(`${environment.url}${this.endPoint}${id}`, params, this.httpHeaders)
       .pipe(retry(1),
         catchError(this.httpError));
   }
 
-  public deleteNivel(id: number): Observable<any> {
+  public deleteGrado(id: number): Observable<any> {
 
     return this.httpClient.delete(`${environment.url}${this.endPoint}${id}`, this.httpHeaders)
       .pipe(retry(1),

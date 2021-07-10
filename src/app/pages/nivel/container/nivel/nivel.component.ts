@@ -3,6 +3,7 @@ import {NivelsService} from '../../../../../providers/nivels/nivels.service';
 import {Nivel} from '../../model/nivels';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {NivelNewComponent} from '../../components/forms/nivel-new/nivel-new.component';
+import { NivelEditComponent } from '../../components/forms/nivel-edit/nivel-edit.component';
 
 @Component({
   selector: 'app-nivel',
@@ -46,9 +47,9 @@ export class NivelComponent implements OnInit {
     }
   }
 
-  /*editNivel(id:bigint):void{
+  editNivel(id:number):void{
     this.nivelService.getNivelById(id).subscribe(response=>{
-      this.nivels=response.data;
+      this.nivel=response.data;
       const nivelForm=this.modalService.open(NivelEditComponent,{size:'lg'});
       nivelForm.componentInstance.title='Edit Nivel';
       nivelForm.componentInstance.nivel=this.nivel;
@@ -67,7 +68,7 @@ export class NivelComponent implements OnInit {
     }, error=>{
       this.error=error;
     })
-  }*/
+  }
 
   public delete(id: number):void{
     this.nivelService.deleteNivel(id).subscribe(response=>{

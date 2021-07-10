@@ -20,6 +20,7 @@ import {ProductListComponent} from "../../pages/product/components/list/product-
 import {ProductsService} from "../../../providers/products/products.service";
 import {NivelComponent} from "../../pages/nivel/container/nivel/nivel.component";
 import {NivelNewComponent} from "../../pages/nivel/components/forms/nivel-new/nivel-new.component";
+import {NivelEditComponent} from "../../pages/nivel/components/forms/nivel-edit/nivel-edit.component";
 import {NivelListComponent} from "../../pages/nivel/components/list/nivel-list/nivel-list.component";
 import {NivelsService} from "../../../providers/nivels/nivels.service";
 import {DepartamentoComponent} from "../../pages/departamento/container/departamento/departamento.component";
@@ -52,6 +53,7 @@ import {DepartamentosService} from "../../../providers/departamentos/departament
     ProductListComponent,
     NivelComponent,
     NivelNewComponent,
+    NivelEditComponent,
     NivelListComponent,
     DepartamentoComponent,
     DepartamentoNewComponent,

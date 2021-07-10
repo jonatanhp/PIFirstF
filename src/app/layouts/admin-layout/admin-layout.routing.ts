@@ -9,13 +9,16 @@ import {ProductComponent} from "../../pages/product/container/product/product.co
 import { DepartamentoComponent } from 'src/app/pages/departamento/container/departamento/departamento.component';
 import {NivelComponent} from '../../pages/nivel/container/nivel/nivel.component';
 
+
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent },
     { path: 'user-profile',   component: UserProfileComponent },
     { path: 'tables',         component: TablesComponent },
     { path: 'icons',          component: IconsComponent },
     { path: 'maps',           component: MapsComponent },
-  { path: 'products',           component: ProductComponent },
-  { path: 'departamentos',    component: DepartamentoComponent},
-  {path: 'niveles', component:NivelComponent}
+    { path: 'products',       component: ProductComponent },
+    { path: 'departamentos',  component: DepartamentoComponent},
+    {path: 'niveles',         component:NivelComponent},
+    //{path: 'grados',         component:NivelComponent}
+    
 ];

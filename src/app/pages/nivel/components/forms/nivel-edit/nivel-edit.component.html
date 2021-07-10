@@ -1,1 +1,32 @@
-<p>nivel-edit works!</p>
+
+<div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">{{title}}</h4>
+    <button type="button" class="close" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="nivelForm">
+      <div class="form-group">
+        <label for="dateOfBirth">Nivel</label>
+        <div class="input-group">
+  
+          <input id="dateOfBirth" class="form-control" placeholder="Nivel" name="dp" formControlName="nom_nivel">
+  
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="dateOfBirth2">Descripcion</label>
+        <div class="input-group">
+  
+          <input id="dateOfBirth2" class="form-control" placeholder="Descripcion" name="dp" formControlName="desc_nivel">
+  
+        </div>
+      </div>
+    </form>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="edit()">Save</button>
+    </div>
+  </div>
+  
+  
