@@ -5,6 +5,8 @@ import {Nivel} from '../../model/nivels';
 import {Grado} from '../../../grado/model/grado';
 import {NivelNewComponent} from '../../components/forms/nivel-new/nivel-new.component';
 import { NivelEditComponent } from '../../components/forms/nivel-edit/nivel-edit.component';
+import { NivelGradosComponent } from '../../components/forms/nivel-grados/nivel-grados.component';
+import { Prueba3Component } from '../../components/forms/prueba3/prueba3.component';
 
 @Component({
   selector: 'app-nivel',
@@ -73,8 +75,11 @@ export class NivelComponent implements OnInit {
   }
 
   searchGradosOfNivel(id:number):void{
-    this.nivelService.getNivelById(id).subscribe(response=>{
-      this.grados=response.message;
+    this.nivelService.getGrados(id).subscribe(response=>{
+      this.grados=response.data;
+      const gradosOfNivelForm=this.modalService.open(Prueba3Component,{size:'lg'});
+      gradosOfNivelForm.componentInstance.title="Lista de grados";
+      gradosOfNivelForm.componentInstance.grados=this.grados;
       console.log("inicio recuperar grados de nivel");
       console.log(this.grados);
       console.log("fin recuperar grados de nivel");

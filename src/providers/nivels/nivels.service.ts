@@ -55,6 +55,13 @@ export class NivelsService {
         catchError(this.httpError));
   }
 
+  public getGrados(id:number):Observable<any>{
+
+    return this.httpClient.get(`${environment.url}${this.endPoint}${id}/grados`, this.httpHeaders)
+    .pipe(retry(1),
+        catchError(this.httpError));
+  }
+
   httpError(error) {
     let msg = '';
     if (error.error instanceof ErrorEvent) {

@@ -22,7 +22,7 @@ export class GradoComponent implements OnInit {
     this.getGradoes();
   }
 
-  getGradoes():void{
+   getGradoes():void{
     
     this.gradoService.getGrado().subscribe(response =>{
     this.grados=response.data;
@@ -48,7 +48,7 @@ export class GradoComponent implements OnInit {
     }
   }
 
-  editGrado(id:number):void{
+  public editGrado(id:number):void{
     this.gradoService.getGradoById(id).subscribe(response=>{
       this.grado=response.data;
       const gradoForm=this.modalService.open(GradoEditComponent,{size:'lg'});

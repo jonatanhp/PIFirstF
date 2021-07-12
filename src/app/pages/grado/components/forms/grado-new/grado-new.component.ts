@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
+
 import { NivelsService } from 'src/providers/nivels/nivels.service';
 import { Nivel } from 'src/app/pages/nivel/model/nivels';
 

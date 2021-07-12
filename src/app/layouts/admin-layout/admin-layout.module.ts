@@ -13,6 +13,8 @@ import {MapsComponent} from '../../pages/maps/maps.component';
 import {UserProfileComponent} from '../../pages/user-profile/user-profile.component';
 import {TablesComponent} from '../../pages/tables/tables.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
+//import { NbDialogRef} from '@nebular/theme';
 import {ProductComponent} from "../../pages/product/container/product/product.component";
 import {ProductNewComponent} from "../../pages/product/components/forms/product-new/product-new.component";
 import {ProductEditComponent} from "../../pages/product/components/forms/product-edit/product-edit.component";
@@ -21,6 +23,8 @@ import {ProductsService} from "../../../providers/products/products.service";
 import {NivelComponent} from "../../pages/nivel/container/nivel/nivel.component";
 import {NivelNewComponent} from "../../pages/nivel/components/forms/nivel-new/nivel-new.component";
 import {NivelEditComponent} from "../../pages/nivel/components/forms/nivel-edit/nivel-edit.component";
+import {NivelGradosComponent} from "../../pages/nivel/components/forms/nivel-grados/nivel-grados.component";
+import {Prueba3Component} from "../../pages/nivel/components/forms/prueba3/prueba3.component"
 import {NivelListComponent} from "../../pages/nivel/components/list/nivel-list/nivel-list.component";
 import {NivelsService} from "../../../providers/nivels/nivels.service";
 import {GradoComponent} from '../../pages/grado/container/grado/grado.component';
@@ -43,6 +47,7 @@ import {DepartamentosService} from "../../../providers/departamentos/departament
         FormsModule,
         HttpClientModule,
         NgbModule,
+       // NbDialogRef,
         ClipboardModule,
         ReactiveFormsModule
     ],
@@ -59,6 +64,7 @@ import {DepartamentosService} from "../../../providers/departamentos/departament
     NivelComponent,
     NivelNewComponent,
     NivelEditComponent,
+    NivelGradosComponent,
     NivelListComponent,
     GradoComponent,
     GradoNewComponent,
