@@ -16,10 +16,15 @@ import { NbThemeModule, NbLayoutModule, NbCardModule,
   NbSidebarModule, NbMenuModule, NbUserModule, NbActionsModule,
   NbContextMenuModule, NbDialogModule, NbIconModule, NbButtonModule, NbSelectModule, NbSpinnerModule, NbDatepickerModule,  } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
+//import { NbDateFnsDateModule } from '@nebular/date.';
 import { PruebaComponent } from './pages/nivel/components/forms/prueba/prueba.component';
 import { Prueba1Component } from './pages/nivel/components/forms/prueba1/prueba1.component';
 import { Prueba2Component } from './pages/nivel/components/forms/prueba2/prueba2.component';
 import { Prueba3Component } from './pages/nivel/components/forms/prueba3/prueba3.component';
+///import { SeccionNewComponent } from './pages/seccion/components/forms/seccion-new/seccion-new.component';
+//import { SeccionEditComponent } from './pages/seccion/components/forms/seccion-edit/seccion-edit.component';
+//import { SeccionListComponent } from './pages/seccion/components/list/seccion-list/seccion-list.component';
+//import { SeccionComponent } from './pages/seccion/container/seccion/seccion.component';
 
 
 
@@ -39,7 +44,19 @@ import { Prueba3Component } from './pages/nivel/components/forms/prueba3/prueba3
     NbThemeModule.forRoot({ name: 'default' }),
     NbLayoutModule,
     NbCardModule,
-    NbEvaIconsModule
+    NbEvaIconsModule,
+    NbSidebarModule.forRoot(),
+    NbMenuModule.forRoot(),
+    NbDialogModule.forRoot({ closeOnEsc: false, closeOnBackdropClick: false }),
+    NbUserModule,
+    NbActionsModule,
+    NbContextMenuModule,
+    NbIconModule,
+    NbButtonModule,
+    NbSelectModule,
+    NbSpinnerModule,
+    NbDatepickerModule.forRoot(),
+    
   ],
   declarations: [
     AppComponent,
@@ -49,6 +66,10 @@ import { Prueba3Component } from './pages/nivel/components/forms/prueba3/prueba3
     Prueba1Component,
     Prueba2Component,
     Prueba3Component,
+    /*SeccionNewComponent,
+    SeccionEditComponent,
+    SeccionListComponent,
+    SeccionComponent,*/
    
     
    ],

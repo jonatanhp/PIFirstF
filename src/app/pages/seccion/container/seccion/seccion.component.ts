@@ -1,48 +1,70 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
-import {NivelsService} from '../../../../../providers/nivels/nivels.service';
-import {Nivel} from '../../model/nivels';
-import {Grado} from '../../../grado/model/grado';
-import {NivelNewComponent} from '../../components/forms/nivel-new/nivel-new.component';
-import { NivelEditComponent } from '../../components/forms/nivel-edit/nivel-edit.component';
-import { NivelGradosComponent } from '../../components/forms/nivel-grados/nivel-grados.component';
-import { Prueba3Component } from '../../components/forms/prueba3/prueba3.component';
+import { Seccion } from '../../model/seccion';
+import { Grado } from 'src/app/pages/grado/model/grado';
+import { Nivel } from 'src/app/pages/nivel/model/nivels';
+import { SeccionService } from 'src/providers/seccion/seccion.service';
+import { GradoService } from 'src/providers/grado/grado.service';
+import { NivelsService } from 'src/providers/nivels/nivels.service';
+import { SeccionNewComponent } from '../../components/forms/seccion-new/seccion-new.component';
+import { NbSelectModule } from '@nebular/theme';
+
 
 @Component({
-  selector: 'app-nivel',
-  templateUrl: './nivel.component.html',
-  styleUrls: ['./nivel.component.css']
+  selector: 'app-seccion',
+  templateUrl: './seccion.component.html',
+  styleUrls: ['./seccion.component.css']
 })
-export class NivelComponent implements OnInit {
-  error:string;
-  nivels:Nivel[];
-  nivel:Nivel;
-  grados:Grado[];
 
-  constructor(private nivelService:NivelsService, private modalService:NgbModal) { }
+
+
+export class SeccionComponent implements OnInit {
+
+  error:string;
+  grados:Grado[];
+  grado:Grado;
+  nivel:Nivel;
+  //@Input() nivel: Nivel;
+  niveles:Nivel[];
+  array:Object[];
+  seccion:Seccion;
+  secciones:Seccion[];
+
+  constructor(private gradoService:GradoService, private modalService:NgbModal, private nivelService:NivelsService, private seccionService:SeccionService) { }
 
   ngOnInit(): void {
-    this.getNiveles();
+    this.getSecciones();
+    this.getListNivelesToSeccion();
   }
 
-  getNiveles():void{
+  getListNivelesToSeccion():void{
     
     this.nivelService.getNivel().subscribe(response =>{
-    this.nivels=response.data;
-    console.log(this.nivels);
+    this.niveles=response.data;
+    console.log(this.niveles);
     }, error =>{
       this.error=error
     });
   }
 
-  public onNewNivel($event):void{
+  getSecciones():void{
+    
+    this.seccionService.getSeccion().subscribe(response =>{
+    this.secciones=response.data;
+    console.log(this.secciones);
+    }, error =>{
+      this.error=error
+    });
+  }
+
+  public onNewSeccion($event):void{
     if($event){
-      const nivelForm=this.modalService.open(NivelNewComponent,{size:'lg'});
+      const nivelForm=this.modalService.open(SeccionNewComponent,{size:'lg'});
       nivelForm.componentInstance.title='New Nivel';
       nivelForm.result.then((result)=>{
-        this.nivelService.postNivel(result).subscribe(response=>{
+        this.seccionService.postSeccion(result).subscribe(response=>{
           if(response.success){
-            this.getNiveles();
+            this.getSecciones();
           }
         }, error=>{
           this.error=error
@@ -51,7 +73,7 @@ export class NivelComponent implements OnInit {
     }
   }
 
-  editNivel(id:number):void{
+  /*editNivel(id:number):void{
     this.nivelService.getNivelById(id).subscribe(response=>{
       this.nivel=response.data;
       console.log("hola");
@@ -75,9 +97,9 @@ export class NivelComponent implements OnInit {
     }, error=>{
       this.error=error;
     })
-  }
+  }*/
 
-  searchGradosOfNivel(id:number):void{
+  /*searchGradosOfNivel(id:number):void{
     this.nivelService.getGrados(id).subscribe(response=>{
       this.grados=response.data;
 
@@ -102,12 +124,12 @@ export class NivelComponent implements OnInit {
       console.log("fin recuperar grados de nivel");
     });
 
-  }
+  }*/
 
   public delete(id: number):void{
-    this.nivelService.deleteNivel(id).subscribe(response=>{
+    this.seccionService.deleteSeccion(id).subscribe(response=>{
       if(response.success){
-        this.getNiveles();
+        this.getSecciones();
         console.log('ffff');
       }
     }, error=>{

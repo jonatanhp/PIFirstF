@@ -15,21 +15,51 @@
       <th scope="col">Descripcion</th>
       <th scope="col">Date Created</th>
       <th scope="col">Date Updated</th>
+      <th scope="col">nivel</th>
       <th scope="col"> Opciones</th>
     </tr>
+    <tr>
+    
+      
+    
     </thead>
     <tbody>
+
       
-    <tr *ngFor="let n of grados">
-      <th scope="row">{{n.id}}</th>
+        <tr class="pointer" *ngFor="let n of gradosf; let i=index"> 
+          <th >{{n.id}}</th>
+        <td>{{n.nom_grado}}</td>
+        <td>{{n.desc_grado}}</td>
+        <td>{{n.created_at}}</td>
+        <td>{{n.updated_at}}</td>
+        <td>{{n.nivel_name[0].nom_nivel}}</td>
+        <!--<td>{{listaNiveles[i].nom_nivel}}</td>-->
+        <td><button class="btn-danger" (click)="delete(n.id)">Eliminar</button>
+          <button class="btn-primary" (click)="editGrado(n.id)">Editar</button>
+          <button class="btn-success" (click)="searchNivelOfGrado(n.id)">Grados</button>
+        </td>
+        </tr>
+     
+
+      
+    <!--<tr *ngFor="let n of gradosf; let x=index">
+      <th >{{n.id}}</th>
       <td>{{n.nom_grado}}</td>
       <td>{{n.desc_grado}}</td>
       <td>{{n.created_at}}</td>
       <td>{{n.updated_at}}</td>
+    </tr>
+    <tr *ngFor="let f of listaNiveles">
+      <td>{{f.nom_nivel}}</td> 
       <td><button class="btn-danger" (click)="delete(n.id)">Eliminar</button>
         <button class="btn-primary" (click)="editGrado(n.id)">Editar</button>
+        <button class="btn-success" (click)="searchNivelOfGrado(n.id)">Grados</button>
       </td>
-    </tr>
+
+    </tr>-->
+      <!--<td>hollaa</td>-->
+      
+    
 
     </tbody>
   </table>

@@ -1,0 +1,10 @@
+<app-seccion-list [secciones]="secciones" (onNew)="onNewSeccion($event)" (onDelete)="delete($event)" 
+></app-seccion-list>
+
+
+<!--(onEdit)="editNivel($event)" (gradosOfNivel)="searchGradosOfNivel($event)"-->
+<nb-layout>
+    <nb-layout-column>
+      <router-outlet></router-outlet>
+    </nb-layout-column>
+  </nb-layout>

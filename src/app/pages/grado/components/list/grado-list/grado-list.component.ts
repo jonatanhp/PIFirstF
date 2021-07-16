@@ -1,5 +1,6 @@
 import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 import { Grado } from '../../../model/grado';
+import { Nivel } from 'src/app/pages/nivel/model/nivels';
 
 @Component({
   selector: 'app-grado-list',
@@ -7,15 +8,19 @@ import { Grado } from '../../../model/grado';
   styleUrls: ['./grado-list.component.css']
 })
 export class GradoListComponent implements OnInit {
-
-  @Input() grados:Grado[];
+  
+  @Input() gradosf:Grado[];
+  @Input() listaNiveles:Nivel[];
+  @Input() nivelt:Grado[];
   @Output() onNew:EventEmitter<boolean>=new EventEmitter();
   @Output() onEdit:EventEmitter<bigint>=new EventEmitter();
   @Output() onDelete:EventEmitter<bigint>=new EventEmitter();
+  @Output() NivelOfGrado:EventEmitter<number>=new EventEmitter();
 
   constructor() { }
 
   ngOnInit(): void {
+    this.searchNivelOfGrado;
   }
   
   public newGrado():void{
@@ -29,5 +34,10 @@ export class GradoListComponent implements OnInit {
   public delete(id:bigint):void{
     this.onDelete.emit(id);
   }
+
+  public searchNivelOfGrado(id:number){
+    this.NivelOfGrado.emit(id);
+  }
+
 
 }

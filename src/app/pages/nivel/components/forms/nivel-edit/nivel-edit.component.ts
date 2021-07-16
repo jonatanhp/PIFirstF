@@ -26,9 +26,11 @@ export class NivelEditComponent implements OnInit {
     if (this.nivel) {
       this.nivelForm.patchValue({
         nom_nivel: this.nivel.nom_nivel,
+        //console.log(this.nivel.nom_nivel);
         desc_nivel: this.nivel.desc_nivel
       });
     }
+    console.log(this.nivel.nom_nivel);
 
   }
 

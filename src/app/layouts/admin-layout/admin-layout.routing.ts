@@ -9,6 +9,8 @@ import {ProductComponent} from "../../pages/product/container/product/product.co
 import { DepartamentoComponent } from 'src/app/pages/departamento/container/departamento/departamento.component';
 import {NivelComponent} from '../../pages/nivel/container/nivel/nivel.component';
 import { GradoComponent} from '../../pages/grado/container/grado/grado.component';
+import {SeccionComponent} from '../../pages/seccion/container/seccion/seccion.component';
+
 
 
 export const AdminLayoutRoutes: Routes = [
@@ -20,6 +22,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'products',       component: ProductComponent },
     { path: 'departamentos',  component: DepartamentoComponent },
     { path: 'niveles',         component:NivelComponent },
-    { path: 'grados',          component:GradoComponent }
+    { path: 'grados',          component:GradoComponent },
+    { path: 'secciones',          component:SeccionComponent }
     
 ];

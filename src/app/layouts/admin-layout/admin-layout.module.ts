@@ -14,6 +14,12 @@ import {UserProfileComponent} from '../../pages/user-profile/user-profile.compon
 import {TablesComponent} from '../../pages/tables/tables.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
+import { NbEvaIconsModule } from '@nebular/eva-icons';
+import { NbThemeModule, NbLayoutModule, NbCardModule,
+  NbSidebarModule, NbMenuModule, NbUserModule, NbActionsModule,
+  NbContextMenuModule, NbDialogModule, NbIconModule, NbButtonModule, NbSelectModule, NbSpinnerModule, NbDatepickerModule, DEFAULT_THEME,  } from '@nebular/theme';
+
+
 //import { NbDialogRef} from '@nebular/theme';
 import {ProductComponent} from "../../pages/product/container/product/product.component";
 import {ProductNewComponent} from "../../pages/product/components/forms/product-new/product-new.component";
@@ -32,6 +38,12 @@ import {GradoNewComponent} from '../../pages/grado/components/forms/grado-new/gr
 import {GradoEditComponent} from '../../pages/grado/components/forms/grado-edit/grado-edit.component';
 import {GradoListComponent} from '../../pages/grado/components/list/grado-list/grado-list.component';
 import {GradoService} from '../../../providers/grado/grado.service';
+import { SeccionComponent} from '../../pages/seccion//container/seccion/seccion.component';
+import { SeccionNewComponent} from '../../pages/seccion/components/forms/seccion-new/seccion-new.component';
+import { SeccionListComponent} from '../../pages/seccion/components/list/seccion-list/seccion-list.component';
+
+import {SeccionService} from '../../../providers/seccion/seccion.service';
+
 import {DepartamentoComponent} from "../../pages/departamento/container/departamento/departamento.component";
 import {DepartamentoNewComponent} from "../../pages/departamento/components/forms/departamento-new/departamento-new.component";
 import {DepartamentoEditComponent} from "../../pages/departamento/components/forms/edit-dep/edit-dep.component";
@@ -42,9 +54,25 @@ import {DepartamentosService} from "../../../providers/departamentos/departament
 
 @NgModule({
     imports: [
+        
         CommonModule,
         RouterModule.forChild(AdminLayoutRoutes),
         FormsModule,
+        NbThemeModule.forRoot({ name: 'default' }),
+        NbLayoutModule,
+        NbCardModule,
+        NbEvaIconsModule,
+        NbSidebarModule.forRoot(),
+    NbMenuModule.forRoot(),
+    NbDialogModule.forRoot({ closeOnEsc: false, closeOnBackdropClick: false }),
+    NbUserModule,
+    NbActionsModule,
+    NbContextMenuModule,
+    NbIconModule,
+    NbButtonModule,
+    NbSelectModule,
+    NbSpinnerModule,
+    NbDatepickerModule.forRoot(),
         HttpClientModule,
         NgbModule,
        // NbDialogRef,
@@ -70,12 +98,22 @@ import {DepartamentosService} from "../../../providers/departamentos/departament
     GradoNewComponent,
     GradoEditComponent,
     GradoListComponent,
+    SeccionComponent,
+    SeccionNewComponent,
+    SeccionListComponent,
     DepartamentoComponent,
     DepartamentoNewComponent,
     DepartamentoEditComponent,
     DepartamentoListComponent,
-  ], providers: [ProductsService, DepartamentosService, NivelsService, GradoService]
+  ], providers: [ProductsService, DepartamentosService, NivelsService, GradoService, SeccionService, NbThemeModule.forRoot({
+    name: 'default',
+},
+[DEFAULT_THEME],).providers]
 })
 
 export class AdminLayoutModule {
 }
+
+
+
+

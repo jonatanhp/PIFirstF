@@ -1,7 +1,8 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output,OnDestroy } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
-
+import { map, takeUntil } from 'rxjs/operators';
+import { Subject } from 'rxjs';
 import { NivelsService } from 'src/providers/nivels/nivels.service';
 import { Nivel } from 'src/app/pages/nivel/model/nivels';
 
@@ -17,7 +18,10 @@ export class GradoNewComponent implements OnInit {
   @Output() onNewData: EventEmitter<Object>=new EventEmitter();
   niveles:Nivel[];
   error:String;
-  
+  private destroy$: Subject<void> = new Subject<void>();
+  @Output() onDeleted = new EventEmitter<boolean>();
+  @Input() index: number = 0;
+  private nivel: any;
 
   constructor(private formBuilder:FormBuilder, public activeModal: NgbActiveModal, private nivelService:NivelsService) { 
     this.gradoForm=this.formBuilder.group({
@@ -28,6 +32,7 @@ export class GradoNewComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.subscribeForms();
     this.getNiveles();
   }
 
@@ -42,6 +47,41 @@ export class GradoNewComponent implements OnInit {
 
   });
   }
+
+
+  private subscribeForms() {
+
+    // this.personaForm.get('ubigeo_pais_id').valueChanges
+    //   .pipe(takeUntil(this.destroy$))
+    //   .subscribe(res => {
+    //     this.getDepartamentos();
+    //   });
+
+    this.gradoForm.get('nivel_id')?.valueChanges
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(res => {
+        this.getNiveles();
+      });
+
+    
+
+  }
+
+
+  private patchForm() {
+    this.gradoForm.patchValue({
+      id: this.nivel.id,
+      nom_nivel: this.nivel.nom_nivel,
+      desc_nivel: this.nivel.desc_nivel,
+     
+      
+    });
+    console.log(this.nivel);
+
+  
+
+  }
+
 
 
   public save():void{

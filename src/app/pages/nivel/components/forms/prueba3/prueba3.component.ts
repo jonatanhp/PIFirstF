@@ -38,10 +38,18 @@ export class Prueba3Component implements OnInit {
     this.error = error; 
 
   });
+  for (let g of this.grados){  
+    console.log("añslfjasdf");
+    console.log(g.nom_grado);
+    //this.listaNiveles.push(gg);
+      
+  }
 
   }
 
   
 
 }
+
+
 

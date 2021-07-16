@@ -2,10 +2,10 @@
     <nb-card-header>
       <div class="text-center">
         <span i18n>
-          ACCIONES |
+          GRADOS |
         </span>
         <span class="font-weight-light" i18n>
-          Configuración de privilegios especiales en los módulos.
+          Lista de grados que pertenecen al nivel
         </span>
       </div>
       <div>
@@ -13,7 +13,7 @@
       </div>
     </nb-card-header>
     <nb-card-body>
-      <form >
+      <!--<form >
         <div class="form-group">
           <label for="nombre" class="label required">Nombre</label>
          
@@ -32,7 +32,7 @@
             Guardar
           </button>
         </div>
-      </form>
+      </form>-->
   
       <div class="table-responsive">
         <table class="table table-sm col-form-label-sm table-hover">
@@ -40,11 +40,20 @@
             <tr>
               <th>N</th>
               <th>Nombre</th>
-              <th>Llave</th>
+              <!--<th>Llave</th>-->
               <th class="text-center">Acciones</th>
             </tr>
           </thead>
-          
+          <tbody>
+              
+            <tr *ngFor="let n of grados">
+              <th scope="row">{{n.id}}</th>
+              <td>{{n.nom_grado}}</td>
+              
+              
+            </tr>
+        
+            </tbody>
           
         </table>
       </div>
@@ -63,6 +72,8 @@
   
     </nb-card-footer>
   </nb-card>
+
+  
   
   
   

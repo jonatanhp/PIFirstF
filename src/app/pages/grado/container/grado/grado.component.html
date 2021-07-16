@@ -1,3 +1,14 @@
 
 
-<app-grado-list [grados]="grados" (onNew)="onNewGrado($event)" (onDelete)="delete($event)" (onEdit)="editGrado($event)"></app-grado-list>
+
+
+<nb-layout>
+    <nb-layout-column>
+      <router-outlet>
+
+        <app-grado-list [gradosf]="gradosf" nivel="nivel"  [listaNiveles]="listaNiveles" (onNew)="onNewGrado($event)" (onDelete)="delete($event)" (onEdit)="editGrado($event)"
+(NivelOfGrado)="searchNivelOfGrado($event)"></app-grado-list>
+
+      </router-outlet>
+    </nb-layout-column>
+  </nb-layout>

@@ -23,20 +23,35 @@
         </div>
       </div>
 
-      <div class="form-group">
-        <label for="ubigeo_depto_id" class="col-form-label label text-right required">Nivel</label>
-        <div class="input-group">
-  
-                <select formControlName="nivel_id" placeholder="Nivelff" size="small" fullWidth
-                name="nivel_id" id="nivel_id"> 
-                  <option *ngFor="let item of niveles" [value]="item.id">
-                      {{item.nom_nivel}}
-                  </option>
-                </select>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+
+            <div class="form-group">
+              <label for="dateOfBirth2">Nivel</label>
               
-  
+        
+                      <select formControlName="nivel_id" placeholder="Nivel" size="small" fullWidth aria-placeholder="Nivel"
+                      name="nivel_id" > 
+                        <option *ngFor="let item of niveles" [value]="item.id">
+                            {{item.nom_nivel}}
+                        </option>
+                      </select>
+                    
+        
+              
+            </div>
+
+          </div>
+
         </div>
       </div>
+
+
+
+
+      
 
 
     </form>
