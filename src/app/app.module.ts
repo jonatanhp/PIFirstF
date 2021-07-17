@@ -21,6 +21,7 @@ import { PruebaComponent } from './pages/nivel/components/forms/prueba/prueba.co
 import { Prueba1Component } from './pages/nivel/components/forms/prueba1/prueba1.component';
 import { Prueba2Component } from './pages/nivel/components/forms/prueba2/prueba2.component';
 import { Prueba3Component } from './pages/nivel/components/forms/prueba3/prueba3.component';
+import { ThemeModule } from './@theme/theme.module';
 ///import { SeccionNewComponent } from './pages/seccion/components/forms/seccion-new/seccion-new.component';
 //import { SeccionEditComponent } from './pages/seccion/components/forms/seccion-edit/seccion-edit.component';
 //import { SeccionListComponent } from './pages/seccion/components/list/seccion-list/seccion-list.component';
@@ -56,6 +57,7 @@ import { Prueba3Component } from './pages/nivel/components/forms/prueba3/prueba3
     NbSelectModule,
     NbSpinnerModule,
     NbDatepickerModule.forRoot(),
+    ThemeModule.forRoot(),
     
   ],
   declarations: [

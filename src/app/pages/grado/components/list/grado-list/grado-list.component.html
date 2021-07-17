@@ -1,8 +1,3 @@
-<br>
-<br>
-<br><br>
-<br>
-
 <div class="container">
 
   <button class="btn btn-primary" (click)="newGrado()"> Agregar Nivel</button>
@@ -32,7 +27,7 @@
         <td>{{n.desc_grado}}</td>
         <td>{{n.created_at}}</td>
         <td>{{n.updated_at}}</td>
-        <td>{{n.nivel_name[0].nom_nivel}}</td>
+        <td>{{n.nivel_name.nom_nivel}}</td>
         <!--<td>{{listaNiveles[i].nom_nivel}}</td>-->
         <td><button class="btn-danger" (click)="delete(n.id)">Eliminar</button>
           <button class="btn-primary" (click)="editGrado(n.id)">Editar</button>

@@ -49,6 +49,9 @@ import {DepartamentoNewComponent} from "../../pages/departamento/components/form
 import {DepartamentoEditComponent} from "../../pages/departamento/components/forms/edit-dep/edit-dep.component";
 import {DepartamentoListComponent} from "../../pages/departamento/components/list/departamento-list/departamento-list.component";
 import {DepartamentosService} from "../../../providers/departamentos/departamentos.service";
+import { ThemeModule } from '../../@theme/theme.module';
+import { LayoutService } from 'src/app/@core/utils/layout.service';
+
 
 // import { ToastrModule } from 'ngx-toastr';
 
@@ -60,6 +63,8 @@ import {DepartamentosService} from "../../../providers/departamentos/departament
         FormsModule,
         NbThemeModule.forRoot({ name: 'default' }),
         NbLayoutModule,
+        ThemeModule,
+       
         NbCardModule,
         NbEvaIconsModule,
         NbSidebarModule.forRoot(),
@@ -85,6 +90,7 @@ import {DepartamentosService} from "../../../providers/departamentos/departament
     TablesComponent,
     IconsComponent,
     MapsComponent,
+    
     ProductComponent,
     ProductNewComponent,
     ProductEditComponent,
@@ -105,7 +111,7 @@ import {DepartamentosService} from "../../../providers/departamentos/departament
     DepartamentoNewComponent,
     DepartamentoEditComponent,
     DepartamentoListComponent,
-  ], providers: [ProductsService, DepartamentosService, NivelsService, GradoService, SeccionService, NbThemeModule.forRoot({
+  ], providers: [ProductsService, LayoutService, DepartamentosService, NivelsService, GradoService, SeccionService, NbThemeModule.forRoot({
     name: 'default',
 },
 [DEFAULT_THEME],).providers]

@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
+import { NbMenuItem } from '@nebular/theme';
 
 declare interface RouteInfo {
   path: string;
@@ -8,8 +9,8 @@ declare interface RouteInfo {
   class: string;
 }
 
-export const ROUTES: RouteInfo[] = [
-  {path: '/dashboard', title: 'Dashboard', icon: 'ni-tv-2 text-primary', class: ''},
+export const ROUTES: NbMenuItem[] = [
+  /*{path: '/dashboard', title: 'Dashboard', icon: 'ni-tv-2 text-primary', class: ''},
   {path: '/icons', title: 'Icons', icon: 'ni-planet text-blue', class: ''},
   {path: '/maps', title: 'Maps', icon: 'ni-pin-3 text-orange', class: ''},
   {path: '/user-profile', title: 'User profile', icon: 'ni-single-02 text-yellow', class: ''},
@@ -17,10 +18,11 @@ export const ROUTES: RouteInfo[] = [
   {path: '/login', title: 'Login', icon: 'ni-key-25 text-info', class: ''},
   {path: '/register', title: 'Register', icon: 'ni-circle-08 text-pink', class: ''},
   {path: '/niveles', title: 'Niveles', icon: 'ni-bullet-list-67 text-red', class: ''},
-  {path: '/grados', title: 'Grados', icon: 'ni-bullet-list-67 text-red', class: ''},
-  {path: '/secciones', title: 'Secciones', icon: 'ni-bullet-list-67 text-red', class: ''},
+  {path: '/grados', title: 'Grados', icon: 'ni-bullet-list-67 text-red', class: ''},*/
+  { title: 'Grados', icon: 'ni-bullet-list-67 text-red', children:[{title:'asd', link:'/grados'},{title:'Nivel', link:'/niveles'}], },
+  /*{path: '/secciones', title: 'Secciones', icon: 'ni-bullet-list-67 text-red', class: ''},
   {path: '/products', title: 'Products', icon: 'ni-bullet-list-67 text-red', class: ''},
-  {path: '/departamentos', title: 'Departamentos', icon: 'ni-bullet-list-67 text-red', class: ''},
+  {path: '/departamentos', title: 'Departamentos', icon: 'ni-bullet-list-67 text-red', class: ''},*/
 ];
 
 @Component({
